@@ -22,6 +22,8 @@ Pull latest image:
 
 ```bash
 $ docker pull tarampampam/nginx:stable-alpine
+# or
+$ docker pull tarampampam/nginx:latest
 ```
 
 And then you can:
