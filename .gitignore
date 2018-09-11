@@ -1,0 +1,10 @@
+# Environment deps.
+/.env
+
+# IDEs
+/nbproject
+/.idea
+
+# Temp dirs & trash
+.DS_Store
+*.cache
