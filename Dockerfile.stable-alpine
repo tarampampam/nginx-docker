@@ -2,5 +2,6 @@ FROM nginx:stable-alpine
 LABEL Description="nginx (a little bit customized)" Vendor="paramtamtam"
 
 COPY ./nginx/html /usr/share/nginx/html
+COPY ./nginx/html-errorpages /usr/share/nginx/html-errorpages
 COPY ./nginx/errorpages.conf /etc/nginx/errorpages.conf
-COPY ./nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
