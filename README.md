@@ -17,6 +17,8 @@ A little bit customized. Changes list:
 - Custom error pages templates
 - Fresh default index page with `favicon.ico` and `robots.txt`
 
+Error pages sources and configs can be [found here][link_shared_content_branch].
+
 > Page on `hub.docker.com` can be [found here][link_hub].
 
 Supported tags:
@@ -25,12 +27,12 @@ Tag name        | Details | Full image name | Dockerfile
 :-------------: | :-----: | :-------------: | :--------:
 `latest`        | ![Size][badge_size_latest] | `tarampampam/nginx:latest` | [link][dockerfile_latest]
 `stable`        | ![Size][badge_size_stable] | `tarampampam/nginx:stable` | [link][dockerfile_stable]
-`stable-alpine` | ![Size][badge_size_stable_alpine] | `tarampampam/nginx:stable-alpine` | [link][dockerfile_stable_alpine]
 `1.11`          | ![Size][badge_size_1_11] | `tarampampam/nginx:1.11` | [link][dockerfile_1_11]
 `1.12`          | ![Size][badge_size_1_12] | `tarampampam/nginx:1.12` | [link][dockerfile_1_12]
 `1.13`          | ![Size][badge_size_1_13] | `tarampampam/nginx:1.13` | [link][dockerfile_1_13]
 `1.14`          | ![Size][badge_size_1_14] | `tarampampam/nginx:1.14` | [link][dockerfile_1_14]
 `1.15`          | ![Size][badge_size_1_15] | `tarampampam/nginx:1.15` | [link][dockerfile_1_15]
+`stable-alpine` | ![Size][badge_size_stable_alpine] | `tarampampam/nginx:stable-alpine` | [link][dockerfile_stable_alpine]
 `1.11-alpine`   | ![Size][badge_size_1_11_alpine] | `tarampampam/nginx:1.11-alpine` | [link][dockerfile_1_11_alpine]
 `1.12-alpine`   | ![Size][badge_size_1_12_alpine] | `tarampampam/nginx:1.12-alpine` | [link][dockerfile_1_12_alpine]
 `1.13-alpine`   | ![Size][badge_size_1_13_alpine] | `tarampampam/nginx:1.13-alpine` | [link][dockerfile_1_13_alpine]
@@ -39,12 +41,12 @@ Tag name        | Details | Full image name | Dockerfile
 
 [badge_size_latest]:https://images.microbadger.com/badges/image/tarampampam/nginx.svg
 [badge_size_stable]:https://images.microbadger.com/badges/image/tarampampam/nginx:stable.svg
-[badge_size_stable_alpine]:https://images.microbadger.com/badges/image/tarampampam/nginx:stable-alpine.svg
 [badge_size_1_11]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.11.svg
 [badge_size_1_12]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.12.svg
 [badge_size_1_13]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.13.svg
 [badge_size_1_14]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.14.svg
 [badge_size_1_15]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.15.svg
+[badge_size_stable_alpine]:https://images.microbadger.com/badges/image/tarampampam/nginx:stable-alpine.svg
 [badge_size_1_11_alpine]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.11-alpine.svg
 [badge_size_1_12_alpine]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.12-alpine.svg
 [badge_size_1_13_alpine]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.13-alpine.svg
@@ -53,12 +55,12 @@ Tag name        | Details | Full image name | Dockerfile
 
 [dockerfile_latest]:https://github.com/tarampampam/nginx-docker/blob/image-latest/Dockerfile
 [dockerfile_stable]:https://github.com/tarampampam/nginx-docker/blob/image-stable/Dockerfile
-[dockerfile_stable_alpine]:https://github.com/tarampampam/nginx-docker/blob/image-stable-alpine/Dockerfile
 [dockerfile_1_11]:https://github.com/tarampampam/nginx-docker/blob/image-1.11/Dockerfile
 [dockerfile_1_12]:https://github.com/tarampampam/nginx-docker/blob/image-1.12/Dockerfile
 [dockerfile_1_13]:https://github.com/tarampampam/nginx-docker/blob/image-1.13/Dockerfile
 [dockerfile_1_14]:https://github.com/tarampampam/nginx-docker/blob/image-1.14/Dockerfile
 [dockerfile_1_15]:https://github.com/tarampampam/nginx-docker/blob/image-1.15/Dockerfile
+[dockerfile_stable_alpine]:https://github.com/tarampampam/nginx-docker/blob/image-stable-alpine/Dockerfile
 [dockerfile_1_11_alpine]:https://github.com/tarampampam/nginx-docker/blob/image-1.11-alpine/Dockerfile
 [dockerfile_1_12_alpine]:https://github.com/tarampampam/nginx-docker/blob/image-1.12-alpine/Dockerfile
 [dockerfile_1_13_alpine]:https://github.com/tarampampam/nginx-docker/blob/image-1.13-alpine/Dockerfile
@@ -86,6 +88,9 @@ $ docker run --rm -p 8080:80 tarampampam/nginx:stable-alpine nginx -g 'daemon of
 
 And open in your favorite browser [127.0.0.1:8080](http://127.0.0.1:8080/).
 
+![Screen shot](https://hsto.org/webt/yz/sw/kq/yzswkqi-4nuyql4kaumnczvjjy8.png)
+![Screen shot](https://hsto.org/webt/by/qu/xz/byquxz7nxaj8bbnl08nwpncf-oi.png)
+
 ### License
 
 WTFPL. Use anywhere for your pleasure.
@@ -99,4 +104,5 @@ WTFPL. Use anywhere for your pleasure.
 [link_hub]:https://hub.docker.com/r/tarampampam/nginx/
 [link_license]:https://github.com/tarampampam/nginx-docker/blob/master/LICENSE
 [link_issues]:https://github.com/tarampampam/nginx-docker/issues
+[link_shared_content_branch]:https://github.com/tarampampam/nginx-docker/tree/shared-content
 [nginx]:https://nginx.org/
