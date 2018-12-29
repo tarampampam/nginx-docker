@@ -4,10 +4,11 @@
 
 # Docker image with [nginx][nginx]
 
-[![Build][badge_build]][link_build]
-[![Stars][badge_pulls]][link_pulls]
-[![License][badge_license]][link_license]
+[![Build][badge_automated]][link_hub]
+[![Build][badge_build]][link_hub]
+[![Docker Pulls][badge_pulls]][link_hub]
 [![Issues][badge_issues]][link_issues]
+[![License][badge_license]][link_license]
 
 A little bit customized. Changes list:
 
@@ -16,7 +17,55 @@ A little bit customized. Changes list:
 - Custom error pages templates
 - Fresh default index page with `favicon.ico` and `robots.txt`
 
-### How can I use this?
+> Page on `hub.docker.com` can be [found here][link_hub].
+
+Supported tags:
+
+Tag name        | Details | Full image name | Dockerfile
+:-------------: | :-----: | :-------------: | :--------:
+`latest`        | ![Size][badge_size_latest] | `tarampampam/nginx:latest` | [link][dockerfile_latest]
+`stable`        | ![Size][badge_size_stable] | `tarampampam/nginx:stable` | [link][dockerfile_stable]
+`stable-alpine` | ![Size][badge_size_stable_alpine] | `tarampampam/nginx:stable-alpine` | [link][dockerfile_stable_alpine]
+`1.11`          | ![Size][badge_size_1_11] | `tarampampam/nginx:1.11` | [link][dockerfile_1_11]
+`1.12`          | ![Size][badge_size_1_12] | `tarampampam/nginx:1.12` | [link][dockerfile_1_12]
+`1.13`          | ![Size][badge_size_1_13] | `tarampampam/nginx:1.13` | [link][dockerfile_1_13]
+`1.14`          | ![Size][badge_size_1_14] | `tarampampam/nginx:1.14` | [link][dockerfile_1_14]
+`1.15`          | ![Size][badge_size_1_15] | `tarampampam/nginx:1.15` | [link][dockerfile_1_15]
+`1.11-alpine`   | ![Size][badge_size_1_11_alpine] | `tarampampam/nginx:1.11-alpine` | [link][dockerfile_1_11_alpine]
+`1.12-alpine`   | ![Size][badge_size_1_12_alpine] | `tarampampam/nginx:1.12-alpine` | [link][dockerfile_1_12_alpine]
+`1.13-alpine`   | ![Size][badge_size_1_13_alpine] | `tarampampam/nginx:1.13-alpine` | [link][dockerfile_1_13_alpine]
+`1.14-alpine`   | ![Size][badge_size_1_14_alpine] | `tarampampam/nginx:1.14-alpine` | [link][dockerfile_1_14_alpine]
+`1.15-alpine`   | ![Size][badge_size_1_15_alpine] | `tarampampam/nginx:1.15-alpine` | [link][dockerfile_1_15_alpine]
+
+[badge_size_latest]:https://images.microbadger.com/badges/image/tarampampam/nginx.svg
+[badge_size_stable]:https://images.microbadger.com/badges/image/tarampampam/nginx:stable.svg
+[badge_size_stable_alpine]:https://images.microbadger.com/badges/image/tarampampam/nginx:stable-alpine.svg
+[badge_size_1_11]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.11.svg
+[badge_size_1_12]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.12.svg
+[badge_size_1_13]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.13.svg
+[badge_size_1_14]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.14.svg
+[badge_size_1_15]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.15.svg
+[badge_size_1_11_alpine]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.11-alpine.svg
+[badge_size_1_12_alpine]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.12-alpine.svg
+[badge_size_1_13_alpine]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.13-alpine.svg
+[badge_size_1_14_alpine]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.14-alpine.svg
+[badge_size_1_15_alpine]:https://images.microbadger.com/badges/image/tarampampam/nginx:1.15-alpine.svg
+
+[dockerfile_latest]:https://github.com/tarampampam/nginx-docker/blob/image-latest/Dockerfile
+[dockerfile_stable]:https://github.com/tarampampam/nginx-docker/blob/image-stable/Dockerfile
+[dockerfile_stable_alpine]:https://github.com/tarampampam/nginx-docker/blob/image-stable-alpine/Dockerfile
+[dockerfile_1_11]:https://github.com/tarampampam/nginx-docker/blob/image-1.11/Dockerfile
+[dockerfile_1_12]:https://github.com/tarampampam/nginx-docker/blob/image-1.12/Dockerfile
+[dockerfile_1_13]:https://github.com/tarampampam/nginx-docker/blob/image-1.13/Dockerfile
+[dockerfile_1_14]:https://github.com/tarampampam/nginx-docker/blob/image-1.14/Dockerfile
+[dockerfile_1_15]:https://github.com/tarampampam/nginx-docker/blob/image-1.15/Dockerfile
+[dockerfile_1_11_alpine]:https://github.com/tarampampam/nginx-docker/blob/image-1.11-alpine/Dockerfile
+[dockerfile_1_12_alpine]:https://github.com/tarampampam/nginx-docker/blob/image-1.12-alpine/Dockerfile
+[dockerfile_1_13_alpine]:https://github.com/tarampampam/nginx-docker/blob/image-1.13-alpine/Dockerfile
+[dockerfile_1_14_alpine]:https://github.com/tarampampam/nginx-docker/blob/image-1.14-alpine/Dockerfile
+[dockerfile_1_15_alpine]:https://github.com/tarampampam/nginx-docker/blob/image-1.15-alpine/Dockerfile
+
+## How can I use this?
 
 Pull latest image:
 
@@ -30,32 +79,24 @@ And then you can:
 
 ```bash
 $ docker run --rm tarampampam/nginx:stable-alpine nginx -v
-  nginx version: nginx/1.14.0
+nginx version: nginx/1.14.0
+
 $ docker run --rm -p 8080:80 tarampampam/nginx:stable-alpine nginx -g 'daemon off;'
 ```
 
 And open in your favorite browser [127.0.0.1:8080](http://127.0.0.1:8080/).
 
-### Local image building
+### License
 
-You can use next commands:
+WTFPL. Use anywhere for your pleasure.
 
-```bash
-$ docker build -t custom-nginx -f ./Dockerfile.stable-alpine .
-$ docker run --rm -p 8080:80 custom-nginx nginx -g 'daemon off;'
-```
-
-#### License
-
-MIT. Use anywhere for your pleasure.
-
-[badge_build]:https://img.shields.io/docker/build/tarampampam/nginx.svg?style=flat&maxAge=30
-[badge_pulls]:https://img.shields.io/docker/pulls/tarampampam/nginx.svg?style=flat&maxAge=30
-[badge_license]:https://img.shields.io/github/license/tarampampam/nginx-docker.svg?style=flat&maxAge=30
-[badge_issues]:https://img.shields.io/github/issues/tarampampam/nginx-docker.svg?style=flat&maxAge=30
-[link_build]:https://hub.docker.com/r/tarampampam/nginx/builds/
-[link_pulls]:https://hub.docker.com/r/tarampampam/nginx/
+[badge_automated]:https://img.shields.io/docker/automated/tarampampam/nginx.svg?style=flat-square&maxAge=30
+[badge_pulls]:https://img.shields.io/docker/pulls/tarampampam/nginx.svg?style=flat-square&maxAge=30
+[badge_issues]:https://img.shields.io/github/issues/tarampampam/nginx-docker.svg?style=flat-square&maxAge=30
+[badge_build]:https://img.shields.io/docker/build/tarampampam/nginx.svg?style=flat-square&maxAge=30
+[badge_license]:https://img.shields.io/github/license/tarampampam/nginx-docker.svg?style=flat-square&maxAge=30
+[link_base_nginx_image]:https://hub.docker.com/_/nginx?tab=tags
+[link_hub]:https://hub.docker.com/r/tarampampam/nginx/
 [link_license]:https://github.com/tarampampam/nginx-docker/blob/master/LICENSE
 [link_issues]:https://github.com/tarampampam/nginx-docker/issues
-[docker_hub]:https://hub.docker.com/r/tarampampam/nginx-docker/
 [nginx]:https://nginx.org/
