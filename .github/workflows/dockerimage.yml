@@ -2,9 +2,9 @@ name: Build Docker Image
 
 on:
   push:
-#     branches:
-#       - 'master'
-#       - 'image-*'
+    branches:
+    - 'master'
+    - 'image-*'
 
 jobs:
   build:
