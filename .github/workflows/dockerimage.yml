@@ -1,6 +1,6 @@
 name: Build Docker Image
 
-on: push
+on:
   push:
 #     branches:
 #       - 'master'
