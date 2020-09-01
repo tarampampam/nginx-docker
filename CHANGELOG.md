@@ -24,6 +24,10 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
   - `1.18-alpine`
   - `1.19-alpine`
 
+### Removed
+
+- Branches `image-*` and `shared-content`
+
 ## 18.12.29
 
 ### Changed
