@@ -1,0 +1,72 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - master
+    tags-ignore:
+      - '**'
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+
+jobs: # Docs: <https://git.io/JvxXE>
+  docker-build:
+    name: Build docker image (${{ matrix.nginx-version }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        nginx-version:
+          - latest
+          - stable
+          - '1.11'
+          - '1.12'
+          - '1.13'
+          - '1.14'
+          - '1.15'
+          - '1.16'
+          - '1.17'
+          - '1.18'
+          - '1.19'
+          - alpine
+          - stable-alpine
+          - '1.11-alpine'
+          - '1.12-alpine'
+          - '1.13-alpine'
+          - '1.14-alpine'
+          - '1.15-alpine'
+          - '1.16-alpine'
+          - '1.17-alpine'
+          - '1.18-alpine'
+          - '1.19-alpine'
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Build docker image
+        run: |
+          docker build \
+            -f ./Dockerfile \
+            --build-arg "NGINX_VERSION=${{ matrix.nginx-version }}" \
+            --tag "local/nginx:${{ matrix.nginx-version }}" \
+            .
+
+      - name: Show image info
+        run: |
+          docker images "local/nginx:${{ matrix.nginx-version }}"
+          docker inspect "local/nginx:${{ matrix.nginx-version }}"
+
+      - name: Run image
+        run: docker run --rm -d -p "80:80/tcp" "local/nginx:${{ matrix.nginx-version }}"
+
+      - name: Sleep
+        run: sleep 2
+
+      - name: HTTP request sending to the container
+        run: |
+          curl -v --fail http://127.0.0.1:80/
+          curl -v http://127.0.0.1:80/error404 || true

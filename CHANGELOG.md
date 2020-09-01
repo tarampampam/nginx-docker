@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog] and this project adheres to [Semantic Versioning][semver].
 
+## 20.09.01
+
+### Changed
+
+- Docker build on **github** side (not `hub.docker.com`)
+- One dockerfile for all `nginx` images
+
+### Added
+
+- GitHub actions for tests and releasing
+- Image with tags:
+  - `1.16`
+  - `1.17`
+  - `1.18`
+  - `1.19`
+  - `1.16-alpine`
+  - `1.17-alpine`
+  - `1.18-alpine`
+  - `1.19-alpine`
+
 ## 18.12.29
 
 ### Changed
